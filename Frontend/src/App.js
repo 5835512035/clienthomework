@@ -40,25 +40,29 @@ class App extends Component {
     return (
       <div>
       <h1>College of Computing</h1>
-      <ol>
+      <ol start="1">
 {
 curriculums.map((curriculum , index) => {
 return (
+                <tr >
+                   <br />
+                     <li>  { curriculum.name + ' '}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     </li>
+                    <td>
+                     <br />
 
-  <li key={curriculum.id}>
-{ curriculum.name + ' '}
-
-<button id={curriculum.id} onClick={this.handleDelete}>Delete</button>
-</li>
-)
+                     <button id={curriculum.id} onClick={this.handleDelete}>delete
+                       </button> 
+                     </td>
+                    </tr>
+              )
 })
 }
-      </ol>
-      <h1>Add Computing </h1>
-      <form onSubmit={this.handleSubmit}>
-      <input type="text"  name="name"  onChange={this.handleChange} value={this.state.name}/>
-      <button type="submmit">Add</button>
-      </form>
+      </ol> <h2>Add Curriculum</h2>
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" name="name" onChange={this.handleChange} value={this.state.name} />
+          <button type="submmit">Submit</button>
+        </form>
 
       
 
